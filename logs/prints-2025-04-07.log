@@ -1,6 +1,0 @@
-15:58:26.087 [main] DEBUG  - Reading configuration: D:\datazoom-automation\locator_config.properties
-15:58:26.089 [main] INFO   - locator_config.properties modified --> 2025-03-06 14:57
-15:58:26.090 [Thread-2] INFO   - Reading configuration: D:\datazoom-automation\selenium_config.properties
-15:58:26.090 [Thread-2] DEBUG  - Reading configuration: D:\datazoom-automation\selenium_config.properties
-15:58:26.090 [Thread-2] INFO   - selenium_config.properties modified --> 2025-04-07 15:43
-15:58:26.090 [Thread-2] INFO   - Reading configuration: D:\datazoom-automation\locator_config.properties
