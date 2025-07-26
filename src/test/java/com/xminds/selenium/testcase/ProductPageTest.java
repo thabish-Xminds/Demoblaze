@@ -1,172 +1,126 @@
-package pages;
 
-import base.BasePage;
-import org.openqa.selenium.By;
+package com.xminds.selenium.testcase;
 
-public class ProductPage extends BasePage {
-	// Locators
-	private final By addToCartButton = By.xpath("//a[contains(text(), 'Add to cart')]");
-	private final By productName = By.cssSelector(".name");
-	private final By productPrice = By.cssSelector(".price-container");
 
-	public String addToCart() {
-		clickElement(addToCartButton);
-		return handleAlert();
-	}
+import java.io.IOException;
 
-	public String getProductName() {
-		return getText(productName);
-	}
+import java.time.Duration;
 
-	public String getProductPrice() {
-		return getText(productPrice);
-	}
-}
-
-// src/main/java/pages/CartPage.java
-package pages;
-
-import base.BasePage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import java.util.ArrayList;
 
 import java.util.List;
 
-public class CartPage extends BasePage {
-	// Locators
-	private final By cartItems = By.cssSelector("#tbodyid tr");
-	private final By placeOrderButton = By.xpath("//button[text()='Place Order']");
-	private final By productNamesInCart = By.cssSelector("#tbodyid tr td:nth-child(2)");
-	private final By deleteLinks = By.cssSelector("#tbodyid tr td:nth-child(4) a");
+import java.util.Set;
 
-	public List<WebElement> getCartItems() {
-		return driver.findElements(cartItems);
-	}
+import org.apache.logging.log4j.LogManager;
 
-	public boolean isProductInCart(String productName) {
-		List<WebElement> productElements = driver.findElements(productNamesInCart);
-		return productElements.stream()
-				.anyMatch(element -> element.getText().contains(productName));
-	}
+import org.apache.logging.log4j.Logger;
 
-	public void placeOrder() {
-		clickElement(placeOrderButton);
-	}
+import org.openqa.selenium.Alert;
 
-	public int getCartItemCount() {
-		return getCartItems().size();
-	}
-}
-
-// src/main/java/pages/CheckoutPage.java
-package pages;
-
-import base.BasePage;
 import org.openqa.selenium.By;
-import utils.TestDataGenerator;
 
-public class CheckoutPage extends BasePage {
-	// Locators
-	private final By nameInput = By.id("name");
-	private final By countryInput = By.id("country");
-	private final By cityInput = By.id("city");
-	private final By cardInput = By.id("card");
-	private final By monthInput = By.id("month");
-	private final By yearInput = By.id("year");
-	private final By purchaseButton = By.xpath("//button[text()='Purchase']");
-	private final By successMessage = By.cssSelector(".sweet-alert h2");
-	private final By orderDetails = By.cssSelector(".sweet-alert p");
-	private final By okButton = By.cssSelector(".sweet-alert .confirm");
+import org.openqa.selenium.Dimension;
 
-	public void fillCheckoutForm(TestDataGenerator.CheckoutData checkoutData) {
-		sendKeys(nameInput, checkoutData.getName());
-		sendKeys(countryInput, checkoutData.getCountry());
-		sendKeys(cityInput, checkoutData.getCity());
-		sendKeys(cardInput, checkoutData.getCard());
-		sendKeys(monthInput, checkoutData.getMonth());
-		sendKeys(yearInput, checkoutData.getYear());
-	}
+import org.openqa.selenium.JavascriptExecutor;
 
-	public void completePurchase() {
-		clickElement(purchaseButton);
-	}
+import org.openqa.selenium.Keys;
 
-	public String getSuccessMessage() {
-		return getText(successMessage);
-	}
+import org.openqa.selenium.WebDriver;
 
-	public String getOrderDetails() {
-		return getText(orderDetails);
-	}
+import org.openqa.selenium.WebElement;
 
-	public void closeSuccessDialog() {
-		clickElement(okButton);
-	}
-}
+import org.openqa.selenium.WindowType;
 
-// src/main/java/base/BaseTest.java
-package base;
+import org.openqa.selenium.interactions.Actions;
+
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import org.testng.Assert;
 
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
-import utils.ConfigReader;
-import utils.DriverFactory;
 
-public class BaseTest {
+import org.testng.annotations.BeforeMethod;
+
+import org.testng.annotations.BeforeTest;
+
+import org.testng.annotations.Test;
+
+import com.xminds.selenium.configurationfiles.Base;
+
+import com.xminds.selenium.configurationfiles.ExcelUtils;
+
+import com.xminds.selenium.pomcollection.pomFile;
+
+import com.xminds.selenium.util.CacheManager;
+
+public class ProductPageTest extends Base {
+
+	public WebDriver driver;
+
+	pomFile pom;
+
+	public static Logger log = LogManager.getLogger(Base.class.getName());
 
 	@BeforeMethod
-	@Parameters("browser")
-	public void setUp(String browser) {
-		String browserName = (browser != null) ? browser : ConfigReader.getBrowser();
-		DriverFactory.setDriver(browserName);
+
+	public void initialize() throws IOException, InterruptedException {
+
+		driver = initializeDriver();
+
+		// driver.get("https://www.demoblaze.com/");
+
+		Thread.sleep(5000);
+
+
+	}
+
+	@Test (priority=1)
+
+	public void verifyConnectorPageTest() throws InterruptedException, IOException
+
+	{
+
+		private final By cartItems = By.cssSelector("#tbodyid tr");
+	    private final By placeOrderButton = By.xpath("//button[text()='Place Order']");
+	    private final By productNamesInCart = By.cssSelector("#tbodyid tr td:nth-child(2)");
+	    private final By deleteLinks = By.cssSelector("#tbodyid tr td:nth-child(4) a");
+	    
+	    public List<WebElement> getCartItems() {
+	        return driver.findElements(cartItems);
+	    }
+	    
+	    public boolean isProductInCart(String productName) {
+	        List<WebElement> productElements = driver.findElements(productNamesInCart);
+	        return productElements.stream()
+	                .anyMatch(element -> element.getText().contains(productName));
+	    }
+	    
+	    public void placeOrder() {
+	        clickElement(placeOrderButton);
+	    }
+	    
+	    public int getCartItemCount() {
+	        return getCartItems().size();
+	    }
 	}
 
 	@AfterMethod
-	public void tearDown() {
-		DriverFactory.quitDriver();
-	}
-}
 
-// src/main/java/listeners/TestListener.java
-package listeners;
+	public void tearDown()
 
-import org.testng.ITestListener;
-import org.testng.ITestResult;
-import utils.DriverFactory;
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+	{
 
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+		driver.quit();
 
-public class TestListener implements ITestListener {
-
-	@Override
-	public void onTestFailure(ITestResult result) {
-		takeScreenshot(result.getMethod().getMethodName());
 	}
 
-	private void takeScreenshot(String testName) {
-		try {
-			TakesScreenshot screenshot = (TakesScreenshot) DriverFactory.getDriver();
-			File sourceFile = screenshot.getScreenshotAs(OutputType.FILE);
-
-			String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-			String fileName = testName + "_" + timestamp + ".png";
-			File destFile = new File("screenshots/" + fileName);
-
-			FileUtils.copyFile(sourceFile, destFile);
-			System.out.println("Screenshot saved: " + destFile.getAbsolutePath());
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
 }
 
 
+
+ 
 
 

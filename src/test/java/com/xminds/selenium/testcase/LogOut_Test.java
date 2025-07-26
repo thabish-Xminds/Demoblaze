@@ -55,7 +55,7 @@ import com.xminds.selenium.pomcollection.pomFile;
 
 import com.xminds.selenium.util.CacheManager;
 
-public class LoginTest extends Base {
+public class LogOut_Test extends Base {
 
 	public WebDriver driver;
 
@@ -76,76 +76,35 @@ public class LoginTest extends Base {
 
 	}
 
-	@Test(priority = 1)
-	public void testSuccessfulLogin() throws InterruptedException {
-		// Navigate to DemoBlaze website
-		driver.get("https://www.demoblaze.com/");
-
-		// Print page title
-		String title = driver.getTitle();
-		System.out.println("The title of the page is " + title);
-		Thread.sleep(2000);
-
+	@Test
+	public void testLogoutFunctionality() throws InterruptedException {
 		// Click Login link
 		WebElement loginLink = driver.findElement(By.id("login2"));
 		loginLink.click();
-		Thread.sleep(2000);
-
-		// Verify username and password labels are enabled
+		// Verify login form elements are enabled
 		WebElement usernameLabel = driver.findElement(By.xpath("//label[@for='log-name']"));
 		WebElement passwordLabel = driver.findElement(By.xpath("//label[@for='log-pass']"));
 		Assert.assertTrue(usernameLabel.isEnabled(), "Username label is not enabled");
 		Assert.assertTrue(passwordLabel.isEnabled(), "Password label is not enabled");
-
-		// Enter valid credentials and click Login button
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(150));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("loginusername")));
+		Thread.sleep(200); // Small pause for demo purposes
+		// Enter valid credentials
 		WebElement usernameField = driver.findElement(By.id("loginusername"));
 		WebElement passwordField = driver.findElement(By.id("loginpassword"));
-
 		usernameField.sendKeys("thabish123");
 		Thread.sleep(200);
 		passwordField.sendKeys("Jaise");
 		Thread.sleep(200);
-
-		WebElement loginButton = driver.findElement(By.xpath("//button[contains(text(),'Log in')]"));
+		// Click Login button
+		WebElement loginButton = driver.findElement(By.xpath("//*[@id=\"logInModal\"]/div/div/div[3]/button[2]"));
 		loginButton.click();
-
-		System.out.println("Login Successful!");
-	}
-
-	@Test(priority = 2)
-	public void testLoginWithBlankUsername() throws InterruptedException {
-		// Navigate to DemoBlaze website again
-		driver.navigate().to("https://www.demoblaze.com/index.html");
-		Thread.sleep(2000);
-
-		// Click Login link
-		WebElement loginLink = driver.findElement(By.id("login2"));
-		loginLink.click();
-		Thread.sleep(2000);
-
-		// Verify username and password labels are enabled
-		WebElement usernameLabel = driver.findElement(By.xpath("//label[@for='log-name']"));
-		WebElement passwordLabel = driver.findElement(By.xpath("//label[@for='log-pass']"));
-		Assert.assertTrue(usernameLabel.isEnabled(), "Username label is not enabled");
-		Assert.assertTrue(passwordLabel.isEnabled(), "Password label is not enabled");
-
-		// Enter only password (leave username blank)
+		// Wait for logout button to be clickable
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(150));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("loginpassword")));
-		WebElement passwordField = driver.findElement(By.id("loginpassword"));
-		passwordField.sendKeys("Johnson143");
-		Thread.sleep(200);
-
-		WebElement loginButton = driver.findElement(By.xpath("//button[contains(text(),'Log in')]"));
-		loginButton.click();
-
-		// Handle alert
-		wait.until(ExpectedConditions.alertIsPresent());
-		Alert alert = driver.switchTo().alert();
-		System.out.println("Alert text: " + alert.getText());
-		alert.accept();
+		WebElement logoutButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("logout2")));
+		// Perform logout
+		logoutButton.click();
+		System.out.println("Logout Successful!");
+		// Verify logout was successful by checking login button reappears
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("login2")));
 	}
 	@AfterMethod
 
@@ -158,4 +117,7 @@ public class LoginTest extends Base {
 	}
 
 }
+
+
+
  
