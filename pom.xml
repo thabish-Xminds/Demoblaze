@@ -157,6 +157,11 @@
     
   
    
+    <dependency>
+    	<groupId>dev.selenium</groupId>
+    	<artifactId>selenium-examples</artifactId>
+    	<version>1.0.0</version>
+    </dependency>
 </dependencies>
 
 <repositories>

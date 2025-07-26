@@ -1,37 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="0" passed="0" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-26T20:39:33 IST" name="Default suite" finished-at="2025-07-26T20:40:01 IST" duration-ms="27542">
+  <suite started-at="2025-07-26T21:46:07 IST" name="Default suite" finished-at="2025-07-26T21:46:07 IST" duration-ms="13">
     <groups>
     </groups>
-    <test started-at="2025-07-26T20:39:33 IST" name="Default test" finished-at="2025-07-26T20:40:01 IST" duration-ms="27542">
-      <class name="com.xminds.selenium.testcase.LoginTest">
-        <test-method is-config="true" signature="initialize()[pri:0, instance:com.xminds.selenium.testcase.LoginTest@3a5ecce3]" started-at="2025-07-26T20:39:34 IST" name="initialize" finished-at="2025-07-26T20:39:41 IST" duration-ms="7351" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialize -->
-        <test-method signature="testSuccessfulLogin()[pri:1, instance:com.xminds.selenium.testcase.LoginTest@3a5ecce3]" started-at="2025-07-26T20:39:41 IST" name="testSuccessfulLogin" finished-at="2025-07-26T20:39:47 IST" duration-ms="6579" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testSuccessfulLogin -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.xminds.selenium.testcase.LoginTest@3a5ecce3]" started-at="2025-07-26T20:39:47 IST" name="tearDown" finished-at="2025-07-26T20:39:48 IST" duration-ms="956" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="initialize()[pri:0, instance:com.xminds.selenium.testcase.LoginTest@3a5ecce3]" started-at="2025-07-26T20:39:48 IST" name="initialize" finished-at="2025-07-26T20:39:55 IST" duration-ms="6298" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialize -->
-        <test-method signature="testLoginWithBlankUsername()[pri:2, instance:com.xminds.selenium.testcase.LoginTest@3a5ecce3]" started-at="2025-07-26T20:39:55 IST" name="testLoginWithBlankUsername" finished-at="2025-07-26T20:40:01 IST" duration-ms="5918" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testLoginWithBlankUsername -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.xminds.selenium.testcase.LoginTest@3a5ecce3]" started-at="2025-07-26T20:40:01 IST" name="tearDown" finished-at="2025-07-26T20:40:01 IST" duration-ms="386" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.xminds.selenium.testcase.LoginTest -->
+    <test started-at="2025-07-26T21:46:07 IST" name="Default test" finished-at="2025-07-26T21:46:07 IST" duration-ms="13">
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
