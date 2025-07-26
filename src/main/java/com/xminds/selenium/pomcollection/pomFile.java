@@ -1,7 +1,7 @@
 package com.xminds.selenium.pomcollection;
 
 import org.openqa.selenium.WebDriver;
-
+import com.xminds.selenium.pageobjects.BlazePage;
 import com.xminds.selenium.pageobjects.CompanyPage;
 import com.xminds.selenium.pageobjects.ConnectorPage;
 import com.xminds.selenium.pageobjects.DashboardPage;
@@ -18,31 +18,15 @@ public class pomFile {
 		this.driver = rdriver;
 	}
 
-// Need to create object for each page objects
-
-	public LoginPage getLoginPage() {
-		LoginPage lp = new LoginPage(driver);
-		return lp;
+	public BlazePage getBlazePage() {
+		BlazePage bp = new BlazePage(driver);
+		return bp;
 	}
 
-	public DashboardPage getDashboardPage() {
-		DashboardPage dp = new DashboardPage(driver);
-		return dp;
-	}
 
-	public CompanyPage getCompanyPage() {
-		CompanyPage cp = new CompanyPage(driver);
-		return cp;
-	}
-
-	public UsersPage getUsersPage() {
-		UsersPage up = new UsersPage(driver);
-		return up;
-	}
-	
-	public ConnectorPage getConnectorPage() {
-		ConnectorPage cp = new ConnectorPage(driver);
-		return cp;
-	}
 }
+
+
+
+
 
