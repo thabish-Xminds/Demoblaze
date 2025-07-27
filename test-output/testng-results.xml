@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-28T02:43:58 IST" name="Default suite" finished-at="2025-07-28T02:44:09 IST" duration-ms="11054">
+  <suite started-at="2025-07-28T03:27:59 IST" name="Default suite" finished-at="2025-07-28T03:28:14 IST" duration-ms="14863">
     <groups>
     </groups>
-    <test started-at="2025-07-28T02:43:58 IST" name="Default test" finished-at="2025-07-28T02:44:09 IST" duration-ms="11054">
-      <class name="com.xminds.selenium.testcase.ProductPageTest">
-        <test-method is-config="true" signature="initialize()[pri:0, instance:com.xminds.selenium.testcase.ProductPageTest@3568f9d2]" started-at="2025-07-28T02:43:58 IST" name="initialize" finished-at="2025-07-28T02:44:06 IST" duration-ms="8831" status="PASS">
+    <test started-at="2025-07-28T03:27:59 IST" name="Default test" finished-at="2025-07-28T03:28:14 IST" duration-ms="14863">
+      <class name="com.xminds.selenium.testcase.SignUp">
+        <test-method is-config="true" signature="initialize()[pri:0, instance:com.xminds.selenium.testcase.SignUp@6155d082]" started-at="2025-07-28T03:27:59 IST" name="initialize" finished-at="2025-07-28T03:28:06 IST" duration-ms="6922" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method signature="verifyConnectorPageTest()[pri:1, instance:com.xminds.selenium.testcase.ProductPageTest@3568f9d2]" started-at="2025-07-28T02:44:06 IST" name="verifyConnectorPageTest" finished-at="2025-07-28T02:44:08 IST" duration-ms="1783" status="PASS">
+        <test-method signature="verifyDemoBlazePageTest()[pri:1, instance:com.xminds.selenium.testcase.SignUp@6155d082]" started-at="2025-07-28T03:28:06 IST" name="verifyDemoBlazePageTest" finished-at="2025-07-28T03:28:14 IST" duration-ms="7513" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyConnectorPageTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.xminds.selenium.testcase.ProductPageTest@3568f9d2]" started-at="2025-07-28T02:44:08 IST" name="tearDown" finished-at="2025-07-28T02:44:09 IST" duration-ms="384" status="PASS">
+        </test-method> <!-- verifyDemoBlazePageTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.xminds.selenium.testcase.SignUp@6155d082]" started-at="2025-07-28T03:28:14 IST" name="tearDown" finished-at="2025-07-28T03:28:14 IST" duration-ms="378" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.xminds.selenium.testcase.ProductPageTest -->
+      </class> <!-- com.xminds.selenium.testcase.SignUp -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

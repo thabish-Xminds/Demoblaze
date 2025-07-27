@@ -46,6 +46,8 @@ public class ProductPageTest extends Base {
     @BeforeMethod
     public void initialize() throws IOException, InterruptedException {
         driver = initializeDriver();
+        
+        pom = new pomFile(driver);
         // driver.get("https://www.demoblaze.com/");
         Thread.sleep(5000);
     }

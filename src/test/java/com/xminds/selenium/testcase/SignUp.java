@@ -68,6 +68,8 @@ public class SignUp extends Base {
 	public void initialize() throws IOException, InterruptedException {
 
 		driver = initializeDriver();
+		
+		pom = new pomFile(driver);
 
 		// driver.get("https://www.demoblaze.com/");
 
