@@ -78,7 +78,7 @@ public class Test1 extends Base {
 
 	@Test (priority=1)
 
-	public void verifyConnectorPageTest() throws InterruptedException, IOException
+	public void verifyDemoBlazePageTest() throws InterruptedException, IOException
 
 	{
 

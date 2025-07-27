@@ -51,7 +51,7 @@ public class ProductPageTest extends Base {
     }
 
     @Test(priority = 1)
-    public void verifyConnectorPageTest() throws InterruptedException, IOException {
+    public void verifyProductPurchaseTest() throws InterruptedException, IOException {
         // Your test logic goes here
         log.info("Starting verifyConnectorPageTest");
         
