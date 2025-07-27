@@ -53,7 +53,7 @@ public class ProductPageTest extends Base {
     @Test(priority = 1)
     public void verifyProductPurchaseTest() throws InterruptedException, IOException {
         // Your test logic goes here
-        log.info("Starting verifyConnectorPageTest");
+        log.info("Starting verifyProductPurchaseTest");
         
         // Example usage of the cart methods
         driver.get("https://www.demoblaze.com/");
