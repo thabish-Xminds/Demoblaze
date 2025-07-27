@@ -55,7 +55,7 @@ import com.xminds.selenium.pomcollection.pomFile;
 
 import com.xminds.selenium.util.CacheManager;
 
-public class Test1 extends Base {
+public class SignUp extends Base {
 
 	public WebDriver driver;
 
