@@ -35,7 +35,7 @@ public class ProductPageTest extends Base {
 
     public WebDriver driver;
     pomFile pom;
-    public static Logger log = LogManager.getLogger(Base.class.getName());
+    
     
     // Cart page locators - these should be at class level, not inside methods
     private final By cartItems = By.cssSelector("#tbodyid tr");
@@ -54,21 +54,20 @@ public class ProductPageTest extends Base {
 
     @Test(priority = 1)
     public void verifyProductPurchaseTest() throws InterruptedException, IOException {
-        // Your test logic goes here
-        log.info("Starting verifyProductPurchaseTest");
+     
+        //log.info("Starting verifyProductPurchaseTest");
         
-        // Example usage of the cart methods
+        
         driver.get("https://www.demoblaze.com/");
         
-        // Add your test steps here
-        // For example:
+        //test steps 
         // 1. Navigate to a product
         // 2. Add to cart
         // 3. Go to cart
         // 4. Verify product is in cart
         // 5. Place order
         
-        log.info("Test completed successfully");
+        //log.info("Test completed successfully");
     }
     
     // Helper methods for cart operations
@@ -90,8 +89,7 @@ public class ProductPageTest extends Base {
         return getCartItems().size();
     }
     
-    // Helper method to click elements (assuming this exists in your Base class)
-    // If not, you'll need to implement it
+    
     private void clickElement(By locator) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(80));
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));

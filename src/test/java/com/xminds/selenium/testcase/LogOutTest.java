@@ -55,14 +55,13 @@ import com.xminds.selenium.pomcollection.pomFile;
 
 import com.xminds.selenium.util.CacheManager;
 
-public class LogOut_Test extends Base {
+public class LogOutTest extends Base {
 
 	public WebDriver driver;
 
 	pomFile pom;
 
-	public static Logger log = LogManager.getLogger(Base.class.getName());
-
+	
 	@BeforeMethod
 
 	public void initialize() throws IOException, InterruptedException {

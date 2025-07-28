@@ -55,13 +55,13 @@ import com.xminds.selenium.pomcollection.pomFile;
 
 import com.xminds.selenium.util.CacheManager;
 
-public class SignUp extends Base {
+public class SignUpTest extends Base {
 
 	public WebDriver driver;
 
 	pomFile pom;
 
-	public static Logger log = LogManager.getLogger(Base.class.getName());
+
 
 	@BeforeMethod
 

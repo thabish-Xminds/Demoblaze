@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.xminds.selenium.testcase.LogOut_Test">
+      <class name="com.xminds.selenium.testcase.SignUp">
         <methods>
-          <include name="tearDown"/>
+          <include name="verifyDemoBlazePageTest"/>
           <include name="initialize"/>
-          <include name="testLogoutFunctionality"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.xminds.selenium.testcase.LogOut_Test -->
+      </class> <!-- com.xminds.selenium.testcase.SignUp -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
