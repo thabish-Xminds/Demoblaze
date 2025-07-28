@@ -61,13 +61,13 @@ public class LogOutTest extends Base {
 
 	pomFile pom;
 
-	
+
 	@BeforeMethod
 
 	public void initialize() throws IOException, InterruptedException {
 
 		driver = initializeDriver();
-		
+
 		pom = new pomFile(driver);
 
 		// driver.get("https://www.demoblaze.com/");
@@ -77,7 +77,7 @@ public class LogOutTest extends Base {
 
 	}
 
-	@Test
+	@Test(priority = 1)
 	public void testLogoutFunctionality() throws InterruptedException {
 		// Click Login link
 		WebElement loginLink = driver.findElement(By.id("login2"));
@@ -121,4 +121,3 @@ public class LogOutTest extends Base {
 
 
 
- 

@@ -33,73 +33,73 @@ import com.xminds.selenium.util.CacheManager;
 
 public class ProductPageTest extends Base {
 
-    public WebDriver driver;
-    pomFile pom;
-    
-    
-    // Cart page locators - these should be at class level, not inside methods
-    private final By cartItems = By.cssSelector("#tbodyid tr");
-    private final By placeOrderButton = By.xpath("//button[text()='Place Order']");
-    private final By productNamesInCart = By.cssSelector("#tbodyid tr td:nth-child(2)");
-    private final By deleteLinks = By.cssSelector("#tbodyid tr td:nth-child(4) a");
+	public WebDriver driver;
+	pomFile pom;
 
-    @BeforeMethod
-    public void initialize() throws IOException, InterruptedException {
-        driver = initializeDriver();
-        
-        pom = new pomFile(driver);
-        // driver.get("https://www.demoblaze.com/");
-        Thread.sleep(5000);
-    }
 
-    @Test(priority = 1)
-    public void verifyProductPurchaseTest() throws InterruptedException, IOException {
-     
-        //log.info("Starting verifyProductPurchaseTest");
-        
-        
-        driver.get("https://www.demoblaze.com/");
-        
-        //test steps 
-        // 1. Navigate to a product
-        // 2. Add to cart
-        // 3. Go to cart
-        // 4. Verify product is in cart
-        // 5. Place order
-        
-        //log.info("Test completed successfully");
-    }
-    
-    // Helper methods for cart operations
-    public List<WebElement> getCartItems() {
-        return driver.findElements(cartItems);
-    }
+	// Cart page locators - these should be at class level, not inside methods
+	private final By cartItems = By.cssSelector("#tbodyid tr");
+	private final By placeOrderButton = By.xpath("//button[text()='Place Order']");
+	private final By productNamesInCart = By.cssSelector("#tbodyid tr td:nth-child(2)");
+	private final By deleteLinks = By.cssSelector("#tbodyid tr td:nth-child(4) a");
 
-    public boolean isProductInCart(String productName) {
-        List<WebElement> productElements = driver.findElements(productNamesInCart);
-        return productElements.stream()
-                .anyMatch(element -> element.getText().contains(productName));
-    }
+	@BeforeMethod
+	public void initialize() throws IOException, InterruptedException {
+		driver = initializeDriver();
 
-    public void placeOrder() {
-        clickElement(placeOrderButton);
-    }
+		pom = new pomFile(driver);
+		// driver.get("https://www.demoblaze.com/");
+		Thread.sleep(5000);
+	}
 
-    public int getCartItemCount() {
-        return getCartItems().size();
-    }
-    
-    
-    private void clickElement(By locator) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(80));
-        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));
-        element.click();
-    }
+	@Test(priority = 1)
+	public void verifyProductPurchaseTest() throws InterruptedException, IOException {
 
-    @AfterMethod
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-        }
-    }
+		//log.info("Starting verifyProductPurchaseTest");
+
+
+		driver.get("https://www.demoblaze.com/");
+
+		//test steps 
+		// 1. Navigate to a product
+		// 2. Add to cart
+		// 3. Go to cart
+		// 4. Verify product is in cart
+		// 5. Place order
+
+		//log.info("Test completed successfully");
+	}
+
+	// Helper methods for cart operations
+	public List<WebElement> getCartItems() {
+		return driver.findElements(cartItems);
+	}
+
+	public boolean isProductInCart(String productName) {
+		List<WebElement> productElements = driver.findElements(productNamesInCart);
+		return productElements.stream()
+				.anyMatch(element -> element.getText().contains(productName));
+	}
+
+	public void placeOrder() {
+		clickElement(placeOrderButton);
+	}
+
+	public int getCartItemCount() {
+		return getCartItems().size();
+	}
+
+
+	private void clickElement(By locator) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(80));
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));
+		element.click();
+	}
+
+	@AfterMethod
+	public void tearDown() {
+		if (driver != null) {
+			driver.quit();
+		}
+	}
 }

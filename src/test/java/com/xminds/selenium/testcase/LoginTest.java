@@ -58,24 +58,13 @@ import com.xminds.selenium.util.CacheManager;
 public class LoginTest extends Base {
 
 	public WebDriver driver;
-
 	pomFile pom;
 
-	public static Logger log = LogManager.getLogger(Base.class.getName());
-
 	@BeforeMethod
-
 	public void initialize() throws IOException, InterruptedException {
-
 		driver = initializeDriver();
-		
 		pom = new pomFile(driver);
-
-		// driver.get("https://www.demoblaze.com/");
-
-		Thread.sleep(5000);
-
-
+		driver.get("https://www.demoblaze.com/");
 	}
 
 	@Test(priority = 1)
@@ -86,12 +75,11 @@ public class LoginTest extends Base {
 		// Print page title
 		String title = driver.getTitle();
 		System.out.println("The title of the page is " + title);
-		Thread.sleep(2000);
 
 		// Click Login link
 		WebElement loginLink = driver.findElement(By.id("login2"));
 		loginLink.click();
-		Thread.sleep(2000);
+
 
 		// Verify username and password labels are enabled
 		WebElement usernameLabel = driver.findElement(By.xpath("//label[@for='log-name']"));
@@ -106,9 +94,7 @@ public class LoginTest extends Base {
 		WebElement passwordField = driver.findElement(By.id("loginpassword"));
 
 		usernameField.sendKeys("thabish123");
-		Thread.sleep(200);
 		passwordField.sendKeys("Jaise");
-		Thread.sleep(200);
 
 		WebElement loginButton = driver.findElement(By.xpath("//button[contains(text(),'Log in')]"));
 		loginButton.click();
@@ -149,15 +135,9 @@ public class LoginTest extends Base {
 		System.out.println("Alert text: " + alert.getText());
 		alert.accept();
 	}
+
 	@AfterMethod
-
-	public void tearDown()
-
-	{
-
+	public void tearDown(){
 		driver.quit();
-
 	}
-
 }
- 
