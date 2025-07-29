@@ -66,11 +66,8 @@ public class LoginTest extends Base {
 	public void testLoginWithBlankUsername() throws InterruptedException {
 
 		driver.navigate().to("https://www.demoblaze.com/index.html");
-		Thread.sleep(2000);
-
 		WebElement loginLink = driver.findElement(By.id("login2"));
 		loginLink.click();
-		Thread.sleep(2000);
 		WebElement usernameLabel = driver.findElement(By.xpath("//label[@for='log-name']"));
 		WebElement passwordLabel = driver.findElement(By.xpath("//label[@for='log-pass']"));
 		Assert.assertTrue(usernameLabel.isEnabled(), "Username label is not enabled");
@@ -79,7 +76,6 @@ public class LoginTest extends Base {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("loginpassword")));
 		WebElement passwordField = driver.findElement(By.id("loginpassword"));
 		passwordField.sendKeys("Johnson143");
-		Thread.sleep(200);
 		WebElement loginButton = driver.findElement(By.xpath("//button[contains(text(),'Log in')]"));
 		loginButton.click();
 		wait.until(ExpectedConditions.alertIsPresent());

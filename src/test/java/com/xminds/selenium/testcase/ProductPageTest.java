@@ -42,7 +42,7 @@ public class ProductPageTest extends Base {
 		driver = initializeDriver();
 		pom = new pomFile(driver);
 	}
-
+	
 	@Test(priority = 1)
 	public void verifyProductPurchaseTest() throws InterruptedException, IOException {
 		driver.get("https://www.demoblaze.com/");
@@ -71,7 +71,7 @@ public class ProductPageTest extends Base {
 		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));
 		element.click();
 	}
-
+	
 	@AfterMethod
 	public void tearDown() {
 		if (driver != null) {
