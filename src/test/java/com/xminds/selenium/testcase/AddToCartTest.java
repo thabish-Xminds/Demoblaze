@@ -2,10 +2,8 @@ package com.xminds.selenium.testcase;
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 import org.testng.annotations.*;
-
 import com.xminds.selenium.configurationfiles.Base;
 import com.xminds.selenium.pomcollection.pomFile;
-
 import static org.testng.Assert.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,28 +11,21 @@ import org.openqa.selenium.support.ui.Select;
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
-
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-
 public class AddToCartTest extends Base {
 
 	public WebDriver driver;
-
 	pomFile pom;
-
 	public static Logger log = LogManager.getLogger(Base.class.getName());
 
 	@BeforeMethod
-
 	public void initialize() throws IOException, InterruptedException {
 		driver = initializeDriver();
 		pom = new pomFile(driver);
-
 	}
-
+	
 	@Test(priority = 1)
 	public void testUntitledTestCase() throws Exception {
 		driver.get("https://www.demoblaze.com/");
@@ -68,6 +59,5 @@ public class AddToCartTest extends Base {
 		driver.findElement(By.xpath("//div[@id='orderModal']/div/div/div[3]/button[2]")).click();
 		driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Cancel'])[1]/following::button[1]")).click();
 		driver.get("https://www.demoblaze.com/index.html");
-
 	}
 }
