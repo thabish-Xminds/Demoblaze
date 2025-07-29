@@ -41,18 +41,17 @@ public class ProductPageTest extends Base {
 	public void initialize() throws IOException, InterruptedException {
 		driver = initializeDriver();
 		pom = new pomFile(driver);
-		Thread.sleep(5000);
 	}
 
 	@Test(priority = 1)
 	public void verifyProductPurchaseTest() throws InterruptedException, IOException {
 		driver.get("https://www.demoblaze.com/");
 	}
-
+	
 	public List<WebElement> getCartItems() {
 		return driver.findElements(cartItems);
 	}
-
+	
 	public boolean isProductInCart(String productName) {
 		List<WebElement> productElements = driver.findElements(productNamesInCart);
 		return productElements.stream()

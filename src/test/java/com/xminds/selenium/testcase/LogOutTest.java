@@ -37,26 +37,22 @@ public class LogOutTest extends Base {
 		driver = initializeDriver();
 		pom = new pomFile(driver);
 	}
-
+	
 	@Test(priority = 1)
 	public void testLogoutFunctionality() throws InterruptedException {
 		
 		WebElement loginLink = driver.findElement(By.id("login2"));
 		loginLink.click();
-		
 		WebElement usernameLabel = driver.findElement(By.xpath("//label[@for='log-name']"));
 		WebElement passwordLabel = driver.findElement(By.xpath("//label[@for='log-pass']"));
 		Assert.assertTrue(usernameLabel.isEnabled(), "Username label is not enabled");
 		Assert.assertTrue(passwordLabel.isEnabled(), "Password label is not enabled");
-		
 		WebElement usernameField = driver.findElement(By.id("loginusername"));
 		WebElement passwordField = driver.findElement(By.id("loginpassword"));
 		usernameField.sendKeys("thabish123");
 		passwordField.sendKeys("Jaise");
-	
 		WebElement loginButton = driver.findElement(By.xpath("//*[@id=\"logInModal\"]/div/div/div[3]/button[2]"));
 		loginButton.click();
-
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(150));
 		WebElement logoutButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("logout2")));
 		logoutButton.click();
@@ -65,7 +61,7 @@ public class LogOutTest extends Base {
 	}
 	@AfterMethod
 	public void tearDown()
-
+	
 	{
 		driver.quit();
 

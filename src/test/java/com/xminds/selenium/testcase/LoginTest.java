@@ -47,20 +47,16 @@ public class LoginTest extends Base {
 
 		WebElement loginLink = driver.findElement(By.id("login2"));
 		loginLink.click();
-
 		WebElement usernameLabel = driver.findElement(By.xpath("//label[@for='log-name']"));
 		WebElement passwordLabel = driver.findElement(By.xpath("//label[@for='log-pass']"));
 		Assert.assertTrue(usernameLabel.isEnabled(), "Username label is not enabled");
 		Assert.assertTrue(passwordLabel.isEnabled(), "Password label is not enabled");
-
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(150));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("loginusername")));
 		WebElement usernameField = driver.findElement(By.id("loginusername"));
 		WebElement passwordField = driver.findElement(By.id("loginpassword"));
-
 		usernameField.sendKeys("thabish123");
 		passwordField.sendKeys("Jaise");
-
 		WebElement loginButton = driver.findElement(By.xpath("//button[contains(text(),'Log in')]"));
 		loginButton.click();
 		System.out.println("Login Successful!");
@@ -79,16 +75,13 @@ public class LoginTest extends Base {
 		WebElement passwordLabel = driver.findElement(By.xpath("//label[@for='log-pass']"));
 		Assert.assertTrue(usernameLabel.isEnabled(), "Username label is not enabled");
 		Assert.assertTrue(passwordLabel.isEnabled(), "Password label is not enabled");
-
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(150));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("loginpassword")));
 		WebElement passwordField = driver.findElement(By.id("loginpassword"));
 		passwordField.sendKeys("Johnson143");
 		Thread.sleep(200);
-
 		WebElement loginButton = driver.findElement(By.xpath("//button[contains(text(),'Log in')]"));
 		loginButton.click();
-
 		wait.until(ExpectedConditions.alertIsPresent());
 		Alert alert = driver.switchTo().alert();
 		System.out.println("Alert text: " + alert.getText());
